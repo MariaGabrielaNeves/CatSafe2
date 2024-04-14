@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".MainActivity">
+    tools:context=".Login">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -24,7 +24,7 @@
         app:srcCompat="@drawable/logo_sem_nome" />
 
     <Button
-        android:id="@+id/button2_continuar"
+        android:id="@+id/button2_continuar1"
         android:layout_width="216dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"

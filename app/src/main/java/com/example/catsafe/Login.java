@@ -64,8 +64,8 @@ public class Login extends AppCompatActivity {
         cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), Cadastro.class));
+                    startActivity(new Intent(getApplicationContext(), Cadastro.class));
+                    finish();
             }
         });
 

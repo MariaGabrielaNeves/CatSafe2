@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.catsafe2.R;
+
 public class Cadastro extends AppCompatActivity {
     Button btn_continuar;
     EditText email, nomeUsuario, senha, confirmaSenha;

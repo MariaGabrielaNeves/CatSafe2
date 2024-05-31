@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.catsafe2.R;
+
 public class Login extends AppCompatActivity {
     EditText nomeUsuario, senha;
     Button btn_continuar;
@@ -55,11 +57,11 @@ public class Login extends AppCompatActivity {
                 if(username.length()==0||password.length()==0){
                     Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
                 }else{
-                    startActivity(new Intent(getApplicationContext(), TelaInicial.class));
+                    Intent intent = new Intent(Login.this, TelaInicial.class);
+                    startActivity(intent);
                 }
             }
         });
-
 
         cadastro.setOnClickListener(new View.OnClickListener() {
             @Override

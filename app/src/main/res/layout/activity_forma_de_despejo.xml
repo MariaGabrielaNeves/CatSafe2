@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FormaDeDespejo">
+    tools:context="com.example.catsafe.FormaDeDespejo">
 
     <View
         android:id="@+id/view"
@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Deseja despejar a ração: "
-        android:textSize="34sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.457"
@@ -116,7 +116,7 @@
         android:id="@+id/textView5_programada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Programar:"
+        android:text="Programar um horário:"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

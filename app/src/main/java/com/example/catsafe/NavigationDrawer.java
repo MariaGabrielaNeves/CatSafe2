@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.catsafe2.R;
+
 public class NavigationDrawer extends AppCompatActivity {
 
     @Override

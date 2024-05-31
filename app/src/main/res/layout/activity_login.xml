@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF"
-    tools:context=".Login"
+    tools:context="com.example.catsafe.Login"
     tools:ignore="MissingDefaultResource">
 
     <EditText
@@ -59,7 +59,7 @@
     <ImageView
         android:id="@+id/imageView2_logo"
         android:layout_width="166dp"
-        android:layout_height="155dp"
+        android:layout_height="140dp"
         android:layout_marginTop="72dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -96,7 +96,7 @@
 
     <Button
         android:id="@+id/button_continuar2"
-        android:layout_width="291dp"
+        android:layout_width="350dp"
         android:layout_height="49sp"
         android:background="@drawable/botao_continuar"
         android:gravity="center"
@@ -124,7 +124,7 @@
         app:layout_constraintHorizontal_bias="0.741"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintVertical_bias="0.853" />
 
     <TextView
         android:id="@+id/textView2"
@@ -135,10 +135,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.892" />
+        app:layout_constraintVertical_bias="0.847" />
 
     <ImageButton
         android:id="@+id/imageButton3_olhoAberto"

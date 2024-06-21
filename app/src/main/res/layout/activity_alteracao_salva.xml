@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/custm_alertdialog"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
+
+
+    <!-- Imagem de Confirmação -->
+    <ImageView
+        android:id="@+id/imageConfirm"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:src="@drawable/verificar" />
+
+
+    <!-- Texto "Sucesso" -->
+    <TextView
+        android:id="@+id/textSucess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="SUCESSO!!"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center" />
+
+
+    <!-- Texto Descritivo -->
+    <TextView
+        android:id="@+id/textDescrition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Parabéns! Suas informações foram alteradas."
+        android:textAlignment="center" />
+
+
+    <!-- Botão de Fechar o AlertDiálogo -->
+    <Button
+        android:id="@+id/buttonexcluir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#C0E476"
+        android:gravity="center"
+        android:stateListAnimator="@null"
+        android:text="Fechar"
+        android:textAllCaps="false"
+        android:textColor="@color/black" />
+
+
+</LinearLayout>

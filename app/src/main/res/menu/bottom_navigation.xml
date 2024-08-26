@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/bottom_germinacao" android:title="Cadastrar pet" android:icon="@drawable/pata"/>
+    <item android:id="@+id/bottom_pureza" android:title="Despejar ração" android:icon="@drawable/vasilhacheia"/>
+    <item android:id="@+id/bottom_umidade" android:title="Histórico" android:icon="@drawable/historico"/>
+    <item android:id="@+id/bottom_tempo" android:title="Câmera" android:icon="@drawable/baseline_camera_alt_24"/>
+</menu>

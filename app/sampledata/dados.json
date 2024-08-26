@@ -1,0 +1,24 @@
+{
+  "produtos": [
+    {
+      "dia": "Hoje",
+      "num_refeicao": 3
+    },
+    {
+      "dia": "Ontem",
+      "num_refeicao": 2
+    },
+    {
+      "dia": "14/08",
+      "num_refeicao": 5
+    },
+    {
+      "dia": "13/08",
+      "num_refeicao": 1
+    },
+    {
+      "dia": "12/08",
+      "num_refeicao": 4
+    }
+  ]
+}

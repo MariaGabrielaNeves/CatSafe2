@@ -55,9 +55,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:width="309dp"
-        android:background="#ECF0F3"
+        android:background="@drawable/custom_borda"
         android:ems="10"
-        android:hint="Maria"
+        android:text="Maria"
         android:inputType="text"
         android:paddingStart="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -113,16 +113,17 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="93dp"
-        android:layout_height="80dp"
+        android:id="@+id/imageView5_logo"
+        android:layout_width="81dp"
+        android:layout_height="85dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.978"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo_sem_nome" />
+        app:srcCompat="@drawable/logo_roxa" />
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -138,13 +139,12 @@
 
     <Button
         android:id="@+id/salvarInformacoes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="196dp"
+        android:layout_height="52dp"
         android:background="@drawable/botao_continuar"
         android:text="Alterar informações"
         android:textColor="@color/white"
-        android:textSize="20dp"
-        app:backgroundTint="#02283F"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -157,9 +157,9 @@
         android:layout_width="309dp"
         android:layout_height="48dp"
         android:layout_marginBottom="20dp"
-        android:background="#ECF0F3"
+        android:background="@drawable/custom_borda"
         android:ems="10"
-        android:hint="*************"
+        android:text="*************"
         android:inputType="textPassword"
         android:paddingStart="10dp"
         app:layout_constraintBottom_toTopOf="@+id/salvarInformacoes"
@@ -188,9 +188,9 @@
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="309dp"
         android:layout_height="48dp"
-        android:background="#ECF0F3"
+        android:background="@drawable/custom_borda"
         android:ems="10"
-        android:hint="maria@gmail.com"
+        android:text="maria@gmail.com"
         android:inputType="textEmailAddress"
         android:paddingStart="10dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"

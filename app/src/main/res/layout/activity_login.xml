@@ -17,9 +17,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:background="#ECF0F3"
+        android:background="@drawable/custom_borda"
         android:drawableLeft="@drawable/baseline_person"
-        android:drawableTint="@color/azul_escuro"
+        android:drawableTint="@color/roxo_claro"
         android:ems="10"
         android:gravity="center_vertical"
         android:hint="Nome de usuário"
@@ -41,9 +41,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:width="309dp"
-        android:background="#ECF0F3"
+        android:background="@drawable/custom_borda"
         android:drawableLeft="@drawable/baseline_lock_"
-        android:drawableTint="@color/azul_escuro"
+        android:drawableTint="@color/roxo_claro"
         android:ems="10"
         android:gravity="center_vertical"
         android:hint="Senha"
@@ -58,26 +58,27 @@
 
     <ImageView
         android:id="@+id/imageView2_logo"
-        android:layout_width="166dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="112dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="88dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_sem_nome" />
+        app:srcCompat="@drawable/logo_roxa" />
 
     <TextView
         android:id="@+id/textView3_fraselogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
         android:text="Conecte-se"
         android:textColor="@color/azul_escuro"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText_nomeUsario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2_logo" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView_esqueceusenha"

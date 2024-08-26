@@ -24,7 +24,7 @@ public class FormaDeDespejo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(getApplicationContext(), TelaInicial.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
     }

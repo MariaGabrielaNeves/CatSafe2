@@ -41,7 +41,7 @@ public class Login extends AppCompatActivity {
                     olhoSenha.setImageResource(R.drawable.olhoaberto);
                 }else {
                     senha.setInputType(InputType.TYPE_CLASS_TEXT |
-                        InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                            InputType.TYPE_TEXT_VARIATION_PASSWORD);
                     senha.setSelection(senha.length());
                     olhoSenha.setImageResource(R.drawable.olhofechado);
                 }
@@ -57,7 +57,7 @@ public class Login extends AppCompatActivity {
                 if(username.length()==0||password.length()==0){
                     Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
                 }else{
-                    Intent intent = new Intent(Login.this, TelaInicial.class);
+                    Intent intent = new Intent(Login.this, MainActivity.class);
                     startActivity(intent);
                 }
             }
@@ -66,8 +66,8 @@ public class Login extends AppCompatActivity {
         cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    startActivity(new Intent(getApplicationContext(), Cadastro.class));
-                    finish();
+                startActivity(new Intent(getApplicationContext(), Cadastro.class));
+                finish();
             }
         });
 

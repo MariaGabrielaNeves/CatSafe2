@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="azul_escuro">#FF03283C</color>
     <color name="azul_claro">#D8F3FF</color>
+    <color name="roxo_claro">#561F7D</color>
+    <color name="roxo_escuro">#47106B</color>
+    <color name="cinza">#D9D9D9</color>
 </resources>

@@ -1,0 +1,52 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/divider3"
+        android:title=" "
+        android:icon="@android:color/transparent" />
+
+    <item
+        android:id="@+id/nav_home1"
+        android:icon="@drawable/home"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/nav_cadastrar_pet"
+        android:icon="@drawable/pata"
+        android:title="Cadastrar Pet"/>
+
+    <item
+        android:id="@+id/nav_editarInformacao"
+        android:icon="@drawable/configuracao"
+        android:title="Informações"/>
+
+    <item
+        android:id="@+id/nav_verificarQuantidade"
+        android:icon="@drawable/vasilhavazia"
+        android:title="Verificar Quantidade"/>
+
+    <item
+        android:id="@+id/nav_despejarRacao"
+        android:icon="@drawable/vasilhacheia"
+        android:title="Despejar Informações"/>
+
+    <item
+        android:id="@+id/nav_alterarQuantidade"
+        android:icon="@drawable/vasilhacheia"
+        android:title="Alterar Quantidade"/>
+
+    <item
+        android:id="@+id/divider1"
+        android:title=" "
+        android:icon="@android:color/transparent" />
+
+    <item
+        android:id="@+id/divider2"
+        android:title=" "
+        android:icon="@android:color/transparent" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/logout"
+        android:title="Log out"/>
+    <!-- Adicione mais itens conforme necessário -->
+</menu>

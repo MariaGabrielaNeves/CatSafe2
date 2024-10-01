@@ -1,4 +1,4 @@
-package com.example.catsafe;
+package com.example.Notificação;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;

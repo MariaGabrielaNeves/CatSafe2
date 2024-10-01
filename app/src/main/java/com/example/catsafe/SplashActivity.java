@@ -9,7 +9,7 @@ import android.util.Log;
 
 import com.example.catsafe2.R;
 
-public class Splash extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
     private static final int SPLASH_DURATION=3000;
 
@@ -23,8 +23,9 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 Log.d("SplashActivity", "Navigating to MainActivity");
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                finish();
+                Intent intent = new Intent(SplashActivity.this, ConectarActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             }
         },SPLASH_DURATION);
     }

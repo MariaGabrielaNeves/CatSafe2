@@ -1,6 +1,5 @@
-package com.example.catsafe;
+package com.example.ListView;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">CatSafe</string>
-    <string name="open_nav">Open Navigation Drawer</string>
-    <string name="close_nav">Close Navigation Drawer</string>
-    <string name="channel_name">CatSafe Notifications</string>
-    <string name="channel_description">Channel for CatSafe notifications</string>
-    <string name="msg_token_fmt">FCM Token: %s</string>
+    <!-- <string name="channel_name">CatSafe Notifications</string>-->
+    <string name="navigation_drawer_open">Abrir menu</string>
+    <string name="navigation_drawer_close">Fechar menu</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF"
-    tools:context="com.example.catsafe.Login"
+    tools:context="com.example.catsafe.LoginActivity"
     tools:ignore="MissingDefaultResource">
 
     <EditText
@@ -18,7 +18,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:background="@drawable/custom_borda"
-        android:drawableLeft="@drawable/baseline_person"
         android:drawableTint="@color/roxo_claro"
         android:ems="10"
         android:gravity="center_vertical"
@@ -42,7 +41,6 @@
         android:layout_alignParentBottom="true"
         android:width="309dp"
         android:background="@drawable/custom_borda"
-        android:drawableLeft="@drawable/baseline_lock_"
         android:drawableTint="@color/roxo_claro"
         android:ems="10"
         android:gravity="center_vertical"
@@ -54,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.536" />
+        app:layout_constraintVertical_bias="0.525" />
 
     <ImageView
         android:id="@+id/imageView2_logo"
@@ -65,15 +63,16 @@
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_roxa" />
+        app:srcCompat="@drawable/logo_login" />
 
     <TextView
         android:id="@+id/textView3_fraselogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
+        android:fontFamily="@font/alfa_slab_one"
         android:text="Conecte-se"
-        android:textColor="@color/azul_escuro"
+        android:textColor="@color/roxo_claro"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextText_nomeUsario"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,57 +88,29 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.801"
+        app:layout_constraintHorizontal_bias="0.766"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612"
+        app:layout_constraintVertical_bias="0.599"
         tools:ignore="DuplicateIds" />
 
     <Button
         android:id="@+id/button_continuar2"
-        android:layout_width="350dp"
+        android:layout_width="250dp"
         android:layout_height="49sp"
         android:background="@drawable/botao_continuar"
+        android:fontFamily="@font/alfa_slab_one"
         android:gravity="center"
         android:padding="10dp"
         android:text="Continuar"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
-        app:backgroundTint="@color/azul_escuro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.755" />
-
-    <TextView
-        android:id="@+id/textView_cadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="48sp"
-        android:clickable="true"
-        android:text="Cadastre-se"
-        android:textColor="#3F51B5"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.853" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="48sp"
-        android:layout_marginTop="28dp"
-        android:text="Não tem uma conta?"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.847" />
+        app:layout_constraintVertical_bias="0.737" />
 
     <ImageButton
         android:id="@+id/imageButton3_olhoAberto"
@@ -160,13 +131,44 @@
         android:id="@+id/checkBox2"
         android:layout_width="135dp"
         android:layout_height="24dp"
+        android:buttonTint="@color/roxo_claro"
         android:text="Lembrar-me"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintHorizontal_bias="0.184"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.613" />
+        app:layout_constraintVertical_bias="0.601" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="48sp"
+        android:layout_marginTop="28dp"
+        android:text="Não tem uma conta?"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81" />
+
+    <TextView
+        android:id="@+id/textView_cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="48sp"
+        android:clickable="true"
+        android:text="Cadastre-se"
+        android:textColor="#3F51B5"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.818" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

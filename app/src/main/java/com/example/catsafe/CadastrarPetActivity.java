@@ -9,17 +9,16 @@ import android.widget.ImageButton;
 
 import com.example.catsafe2.R;
 
-public class FormaDeDespejo extends AppCompatActivity {
+public class CadastrarPetActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forma_de_despejo);
+        setContentView(R.layout.activity_cadastrar_pet);
 
         ImageButton voltar;
 
         voltar = findViewById(R.id.imageButton2_voltar);
-
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

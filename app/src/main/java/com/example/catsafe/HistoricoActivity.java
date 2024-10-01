@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
+
+import com.example.ListView.HistoricoAdpt;
+import com.example.ListView.MyAdapter;
 import com.example.catsafe2.R;
 import android.view.View;
 import android.widget.ListView;
@@ -12,7 +15,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Historico extends AppCompatActivity {
+public class HistoricoActivity extends AppCompatActivity {
 
     MyAdapter myAdapter;
     ArrayList<HistoricoAdpt> historicoAdpts = new ArrayList<>();

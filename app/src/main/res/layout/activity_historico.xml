@@ -1,85 +1,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.catsafe.Historico">
-
-    <!-- Background View -->
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/roxo_escuro"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
-    <!-- Main Card Layout -->
-    <ImageView
-        android:id="@+id/imageView5_logo"
-        android:layout_width="85dp"
-        android:layout_height="81dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo_branco" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mariaaaaaa"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.444" />
+    android:id="@+id/constraintLayout"
+    android:layout_width="410dp"
+    android:layout_height="729dp"
+    tools:context="com.example.catsafe.HistoricoActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="409dp"
-        android:layout_height="642dp"
-        android:background="@drawable/bordas_card"
-        app:layout_constraintTop_toTopOf="@id/view"
+        android:id="@+id/constraintLayout1"
+        android:layout_width="410dp"
+        android:layout_height="729dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/view"
         app:layout_constraintVertical_bias="1.0">
-
-        <!-- ListView Container -->
-        <FrameLayout
-            android:id="@+id/frameLayout2"
-            android:layout_width="414dp"
-            android:layout_height="272dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ListView
-                    android:id="@+id/listview"
-                    android:layout_width="419dp"
-                    android:layout_height="273dp"
-                    android:divider="@android:color/transparent"
-                    android:dividerHeight="5.0dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:listitem="@layout/item_lista" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </FrameLayout>
 
         <!-- Back Button -->
         <ImageButton
@@ -89,11 +22,11 @@
             android:backgroundTint="@color/white"
             android:scaleType="fitStart"
             android:src="@drawable/voltar"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/textView8"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.08" />
 
         <!-- Information Texts -->
@@ -101,27 +34,27 @@
             android:id="@+id/textView8"
             android:layout_width="182dp"
             android:layout_height="46dp"
+            android:layout_marginBottom="332dp"
             android:text="Quantidade de ração disponível disponível:"
             android:textColor="@color/azul_escuro"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.07"
-            android:layout_marginBottom="332dp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
             android:text="Tijela está cheia!"
             android:textColor="@color/azul_escuro"
             android:textSize="21sp"
             app:layout_constraintBottom_toTopOf="@+id/textView8"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            android:layout_marginBottom="40dp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView_horario"
@@ -163,7 +96,44 @@
             app:layout_constraintHorizontal_bias="0.739"
             app:layout_constraintStart_toStartOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- ListView Container -->
+        <ImageView
+            android:id="@+id/imageView5_logo"
+            android:layout_width="85dp"
+            android:layout_height="81dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_roxa" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout2"
+            android:layout_width="414dp"
+            android:layout_height="272dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:id="@+id/listview"
+                    android:layout_width="419dp"
+                    android:layout_height="273dp"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="5.0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/item_lista" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
 
     <!-- Header Information -->
     <TextView
@@ -213,9 +183,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.336" />
 
-
-
-
     <ImageView
         android:id="@+id/imageView_usuario"
         android:layout_width="100dp"
@@ -228,16 +195,17 @@
         tools:src="@tools:sample/avatars" />
 
     <!-- Additional Texts -->
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="76dp"
-        android:layout_height="27dp"
-        android:text="2,500g"
-        android:textColor="@color/azul_escuro"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="@+id/textView_painelHoras"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_painelHoras"
-        app:layout_constraintStart_toStartOf="@+id/textView_painelHoras"
-        app:layout_constraintEnd_toEndOf="@+id/textView_painelHoras" />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="91dp"
+            android:layout_height="48dp"
+            android:text="2,500g"
+            android:textColor="@color/azul_escuro"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_painelHoras"
+            app:layout_constraintEnd_toEndOf="@+id/textView_painelHoras"
+            app:layout_constraintStart_toStartOf="@+id/textView_painelHoras"
+            app:layout_constraintTop_toTopOf="@+id/textView_painelHoras" />
 
+</androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

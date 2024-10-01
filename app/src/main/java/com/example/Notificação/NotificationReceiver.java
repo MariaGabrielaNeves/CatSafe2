@@ -1,4 +1,4 @@
-package com.example.catsafe;
+package com.example.Notificação;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

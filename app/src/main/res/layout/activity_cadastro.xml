@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context="com.example.catsafe.Cadastro"
+    tools:context="com.example.catsafe.CadastroActivity"
     tools:ignore="MissingDefaultResource">
 
     <EditText
@@ -18,7 +18,6 @@
         android:layout_alignParentBottom="true"
         android:width="309dp"
         android:background="@drawable/custom_borda"
-        android:drawableLeft="@drawable/baseline_lock_"
         android:drawableTint="@color/roxo_claro"
         android:ems="10"
         android:gravity="center_vertical"
@@ -42,7 +41,6 @@
         android:layout_alignParentBottom="true"
         android:width="309dp"
         android:background="@drawable/custom_borda"
-        android:drawableLeft="@drawable/baseline_lock_"
         android:drawableTint="@color/roxo_claro"
         android:ems="10"
         android:gravity="center_vertical"
@@ -70,7 +68,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.181"
-        app:srcCompat="@drawable/logo_roxa" />
+        app:srcCompat="@drawable/logo_login" />
 
     <Button
         android:id="@+id/button2_continuar"
@@ -82,6 +80,7 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/botao_continuar"
         android:text="Continuar"
+        android:fontFamily="@font/alfa_slab_one"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -90,35 +89,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.818" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="48sp"
-        android:layout_marginTop="28dp"
-        android:text="Já tem uma conta?"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922" />
-
-    <TextView
-        android:id="@+id/textView_cadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="48sp"
-        android:clickable="true"
-        android:text="Conecte-se"
-        android:textColor="#3F51B5"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.697"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
 
     <EditText
         android:id="@+id/editTextText_nomeUsario"
@@ -129,7 +99,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:background="@drawable/custom_borda"
-        android:drawableLeft="@drawable/baseline_person"
         android:drawableTint="@color/roxo_claro"
         android:ems="10"
         android:gravity="center_vertical"
@@ -153,7 +122,6 @@
         android:layout_alignParentBottom="true"
         android:width="309dp"
         android:background="@drawable/custom_borda"
-        android:drawableLeft="@drawable/baseline_email"
         android:drawableTint="@color/roxo_claro"
         android:ems="10"
         android:hint=" E-mail"
@@ -174,7 +142,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:text="Cadastre-se"
-        android:textColor="#03283C"
+        android:fontFamily="@font/alfa_slab_one"
+        android:textColor="@color/roxo_claro"
         android:textSize="24sp"
         app:autoSizeTextType="none"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -183,4 +152,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.334" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="48sp"
+        android:layout_marginTop="28dp"
+        android:text="Ja tem uma conta?"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.899" />
+
+    <TextView
+        android:id="@+id/textView_cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="48sp"
+        android:clickable="true"
+        android:text="Entrar"
+        android:textColor="#3F51B5"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.747"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.903" />
 </androidx.constraintlayout.widget.ConstraintLayout>

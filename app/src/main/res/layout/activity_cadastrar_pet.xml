@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.catsafe.CadastrarPet">
+    tools:context="com.example.catsafe.CadastrarPetActivity">
     <View
         android:id="@+id/view"
         android:layout_width="wrap_content"
@@ -161,18 +161,6 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="81dp"
-        android:layout_height="85dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo_roxa" />
-
-    <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="107dp"
@@ -186,10 +174,11 @@
 
     <Button
         android:id="@+id/salvarInformacoes"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:background="@drawable/botao_continuar"
         android:text="SALVAR"
+        android:fontFamily="@font/alfa_slab_one"
         android:textColor="@color/white"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -15,17 +15,18 @@ import com.example.catsafe2.R;
 
 public class ProgramarHorarioActivity extends AppCompatActivity {
     Dialog dialog;
+    ImageButton voltar;
+    Button button2_continuar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_programar_horario);
 
-        ImageButton voltar;
-        Button button2_continuar;
-        dialog = new Dialog(this);
-
         voltar = findViewById(R.id.imageButton2_voltar);
         button2_continuar = findViewById(R.id.button2_continuar);
+
+        dialog = new Dialog(this);
 
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override

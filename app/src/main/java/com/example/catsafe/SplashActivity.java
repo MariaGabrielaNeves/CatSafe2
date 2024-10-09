@@ -16,13 +16,13 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("SplashActivity", "Splash screen started");
+        Log.d("SplashActivity", "Inicio, deu certo");
         setContentView(R.layout.activity_splash);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Log.d("SplashActivity", "Navigating to MainActivity");
+                Log.d("SplashActivity", "Testando");
                 Intent intent = new Intent(SplashActivity.this, ConectarActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);

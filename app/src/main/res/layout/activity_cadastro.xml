@@ -8,53 +8,64 @@
     tools:context="com.example.catsafe.CadastroActivity"
     tools:ignore="MissingDefaultResource">
 
-    <EditText
-        android:id="@+id/editTextText_senha"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutSenha"
         android:layout_width="309dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:width="309dp"
-        android:background="@drawable/custom_borda"
-        android:drawableTint="@color/roxo_claro"
-        android:ems="10"
-        android:gravity="center_vertical"
-        android:hint=" Senha"
-        android:inputType="textPassword"
-        android:paddingStart="10dp"
-        android:textSize="18sp"
+        android:layout_height="wrap_content"
+        app:boxStrokeColor="@color/roxo_claro"
+        android:hint="Senha"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeWidthFocused="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintVertical_bias="0.597"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="8dp"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/roxo_claro">
 
-    <EditText
-        android:id="@+id/editTextText_confirmaSenha"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditSenha"
+            android:layout_width="match_parent"
+            android:layout_height="54sp"
+            android:inputType="textPassword"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutConfirmaSenha"
         android:layout_width="309dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:width="309dp"
-        android:background="@drawable/custom_borda"
-        android:drawableTint="@color/roxo_claro"
-        android:ems="10"
-        android:gravity="center_vertical"
-        android:hint=" Confirmar senha"
-        android:inputType="textPassword"
-        android:paddingStart="10dp"
-        android:textSize="18sp"
+        android:layout_height="wrap_content"
+        app:boxStrokeColor="@color/roxo_claro"
+        android:hint="Confirmar Senha"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeWidthFocused="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.688" />
+        app:layout_constraintVertical_bias="0.688"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/roxo_claro">
 
-    <ImageView
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditTextConfirmaSenha"
+        android:layout_width="match_parent"
+        android:layout_height="54sp"
+        android:inputType="textPassword"
+        android:paddingVertical="10dp"
+        android:paddingStart="10dp"
+        android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+<ImageView
         android:id="@+id/imageView2"
         android:layout_width="112dp"
         android:layout_height="114dp"
@@ -90,48 +101,62 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.818" />
 
-    <EditText
-        android:id="@+id/editTextText_nomeUsario"
+    <!--nome de Usuario-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutNomeUsuario"
         android:layout_width="309dp"
-        android:layout_height="48sp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/custom_borda"
-        android:drawableTint="@color/roxo_claro"
-        android:ems="10"
-        android:gravity="center_vertical"
-        android:hint=" Nome de usuário"
-        android:inputType="text"
-        android:paddingStart="10dp"
-        android:textSize="18sp"
+        android:hint="Nome de Usuário"
+        android:layout_height="wrap_content"
+        app:boxStrokeColor="@color/roxo_claro"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeWidthFocused="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513" />
+        app:layout_constraintVertical_bias="0.513"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="8dp">
 
-    <EditText
-        android:id="@+id/editTextText_email"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditNomeUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="54sp"
+            android:inputType="text"
+            android:paddingBottom="10dp"
+            android:paddingStart="10dp"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--email-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutEmail"
         android:layout_width="309dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:width="309dp"
-        android:background="@drawable/custom_borda"
-        android:drawableTint="@color/roxo_claro"
-        android:ems="10"
-        android:hint=" E-mail"
-        android:inputType="text"
-        android:paddingStart="10dp"
+        android:layout_height="wrap_content"
+        android:hint="E-mail"
+        app:boxStrokeColor="@color/roxo_claro"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeWidthFocused="1dp"
+        android:layout_marginBottom="8dp"
+        android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.424" />
+        app:layout_constraintVertical_bias="0.424">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="54sp"
+            android:inputType="text"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/textView3"

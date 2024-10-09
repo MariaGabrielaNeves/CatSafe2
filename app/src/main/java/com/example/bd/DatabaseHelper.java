@@ -1,4 +1,56 @@
-package com.example.catsafe;
+package com.example.bd;
+
+import android.content.Context;
+
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
+
+@Database(entities = {Usuario.class, Pet.class, Historico.class}, version = 1)
+public abstract class DatabaseHelper /*CatSafeDatabase*/ extends RoomDatabase {
+        private static volatile DatabaseHelper INSTANCE;
+
+        public abstract UsuarioDAO getUsuarioDAO();
+        public abstract PetDAO getPetDAO();
+        public abstract HistoricoDAO getHistoricoDAO();
+
+        public static DatabaseHelper getDatabase(final Context context) {
+            if (INSTANCE == null) {
+                synchronized (DatabaseHelper.class) {
+                    if (INSTANCE == null) {
+                        INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+                                        DatabaseHelper.class, "nome_do_banco_de_dados")
+                                .build();
+                    }
+                }
+            }
+            return INSTANCE;
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*package com.example.bd;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,10 +58,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DataBaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Construtor
-    public DataBaseHelper(Context context) {
+    public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -149,4 +201,19 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return null;
     }
 
-}
+    public boolean isInserted(String name, String email, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(COLUNA_NOME_USUARIO, name);
+        values.put(COLUNA_EMAIL_USUARIO, email);
+        values.put(COLUNA_SENHA_USUARIO, password);
+
+        // Tenta inserir o novo usuário na tabela
+        long result = db.insert(TABELA_USUARIO, null, values);
+        db.close();
+
+        // Verifica se o resultado é -1, que indica falha na inserção
+        return result != -1;
+    }
+}*/

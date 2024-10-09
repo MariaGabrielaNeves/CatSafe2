@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.example.catsafe.CadastrarPetActivity">
     <View
         android:id="@+id/view"
@@ -34,7 +35,7 @@
         android:id="@+id/textView_esqueceusenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastrando o Pet"
+        android:text="Cadastrando Pet"
         android:textColor="@color/azul_escuro"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -160,22 +161,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="107dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.221"
-        tools:src="@tools:sample/avatars" />
-
     <Button
         android:id="@+id/salvarInformacoes"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="@drawable/botao_continuar"
         android:text="SALVAR"
         android:fontFamily="@font/alfa_slab_one"
@@ -188,8 +177,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.885" />
 
-    <EditText
-        android:id="@+id/editTextText_sexoInformado"
+    <Spinner
+        android:id="@+id/spinner_sexoInformado"
         android:layout_width="309dp"
         android:layout_height="48dp"
         android:layout_marginBottom="20dp"
@@ -203,6 +192,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.836" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="138dp"
+        android:layout_height="128dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView_nome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_esqueceusenha"
+        app:srcCompat="@drawable/foto_de_perfil" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

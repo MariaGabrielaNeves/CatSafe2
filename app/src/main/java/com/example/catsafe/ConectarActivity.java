@@ -20,6 +20,7 @@ public class ConectarActivity extends AppCompatActivity {
 
         button2_continuar = findViewById(R.id.button2_continuar);
         textView_cadastro = findViewById(R.id.textView_cadastro);
+
         button2_continuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,8 +34,6 @@ public class ConectarActivity extends AppCompatActivity {
                 startActivity(new Intent(ConectarActivity.this, CadastroActivity.class));
             }
         });
-
-
 
     }
 }

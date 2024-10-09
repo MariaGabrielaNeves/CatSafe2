@@ -4,6 +4,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="410dp"
     android:layout_height="729dp"
+    android:background="@color/white"
     tools:context="com.example.catsafe.HistoricoActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,7 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
-        <!-- Back Button -->
         <ImageButton
             android:id="@+id/imageButton2_voltar"
             android:layout_width="61dp"
@@ -29,7 +29,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.08" />
 
-        <!-- Information Texts -->
         <TextView
             android:id="@+id/textView8"
             android:layout_width="182dp"
@@ -134,8 +133,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </FrameLayout>
 
-
-    <!-- Header Information -->
     <TextView
         android:id="@+id/textView_userPet"
         android:layout_width="wrap_content"
@@ -151,7 +148,6 @@
         app:layout_constraintVertical_bias="0.29"
         tools:ignore="DuplicateIds" />
 
-    <!-- Time Panel -->
     <TextView
         android:id="@+id/textView_painelHoras"
         android:layout_width="182dp"
@@ -183,18 +179,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.336" />
 
-    <ImageView
-        android:id="@+id/imageView_usuario"
-        android:layout_width="100dp"
-        android:layout_height="107dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.153"
-        tools:src="@tools:sample/avatars" />
-
-    <!-- Additional Texts -->
         <TextView
             android:id="@+id/textView7"
             android:layout_width="91dp"
@@ -204,8 +188,21 @@
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="@+id/textView_painelHoras"
             app:layout_constraintEnd_toEndOf="@+id/textView_painelHoras"
+            app:layout_constraintHorizontal_bias="0.075"
             app:layout_constraintStart_toStartOf="@+id/textView_painelHoras"
             app:layout_constraintTop_toTopOf="@+id/textView_painelHoras" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="100dp"
+            android:layout_height="107dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView_userPet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.467"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.978"
+            app:srcCompat="@drawable/foto_de_perfil" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

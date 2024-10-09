@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.example.catsafe.DadosCadastradosActivity">
 
     <View
@@ -46,7 +47,7 @@
         app:layout_constraintVertical_bias="0.138"
         tools:ignore="DuplicateIds" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextText_nomeUsuario"
         android:layout_width="309dp"
         android:layout_height="48dp"
@@ -57,7 +58,8 @@
         android:width="309dp"
         android:background="@drawable/custom_borda"
         android:ems="10"
-        android:hint="Maria"
+        android:text="Maria"
+        android:textSize="18dp"
         android:inputType="text"
         android:paddingStart="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,6 +68,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.461" />
+
 
     <TextView
         android:id="@+id/textView_esqueceusenha"
@@ -76,12 +79,11 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675"
+        app:layout_constraintVertical_bias="0.685"
         tools:ignore="DuplicateIds" />
-
 
     <TextView
         android:id="@+id/textView_esqueceusenha"
@@ -119,6 +121,7 @@
         android:layout_height="107dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/foto_de_perfil"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -127,10 +130,10 @@
 
     <Button
         android:id="@+id/alterarInformacoes"
-        android:layout_width="255dp"
-        android:layout_height="52dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/botao_continuar"
-        android:text="Alterar informações"
+        android:text="Alterar"
         android:fontFamily="@font/alfa_slab_one"
         android:textColor="@color/white"
         android:textSize="15sp"
@@ -141,14 +144,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.885" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextTextPassword"
         android:layout_width="309dp"
         android:layout_height="48dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/custom_borda"
         android:ems="10"
-        android:hint="*************"
+        android:text="*************"
+        android:textSize="20sp"
         android:inputType="textPassword"
         android:paddingStart="10dp"
         app:layout_constraintBottom_toTopOf="@+id/alterarInformacoes"
@@ -167,19 +171,20 @@
         android:scaleType="fitStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintHorizontal_bias="0.829"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736"
+        app:layout_constraintVertical_bias="0.735"
         app:srcCompat="@drawable/olhoaberto" />
 
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
+    <TextView
+        android:id="@+id/TextEmailAddress"
         android:layout_width="309dp"
         android:layout_height="48dp"
         android:background="@drawable/custom_borda"
         android:ems="10"
-        android:hint="maria@gmail.com"
+        android:text="maria@gmail.com"
+        android:textSize="18dp"
         android:inputType="textEmailAddress"
         android:paddingStart="10dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"

@@ -1,10 +1,12 @@
 package com.example.catsafe;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.bd.DatabaseHelper;
 import com.example.catsafe2.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -22,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView esqueceuSenha, cadastro;
     ImageButton olhoSenha;
     CheckBox checkBox2;
-    private DataBaseHelper db;
+    private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,22 +40,17 @@ public class LoginActivity extends AppCompatActivity {
         olhoSenha = findViewById(R.id.imageButton3_olhoAberto);
         checkBox2 = findViewById(R.id.checkBox2);
 
-        db = new DataBaseHelper(this);
-
+        db = DatabaseHelper.getDatabase(this);
         SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
-
-        // Verifica se o login está salvo e se os dados estão disponíveis
         boolean saveLogin = sharedPreferences.getBoolean("save_login", false);
-        if (saveLogin) {
-            String savedUsername = sharedPreferences.getString("username", null);
-            String savedPassword = sharedPreferences.getString("password", null);
 
-            if (savedUsername != null && savedPassword != null) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-                return; // Termina o onCreate() para não continuar executando o restante do código
-            }
+        // Preencher campos se o login estiver salvo
+        if (saveLogin) {
+            String savedUsername = sharedPreferences.getString("username", "");
+            String savedPassword = sharedPreferences.getString("password", "");
+            nomeUsuario.setText(savedUsername);
+            senha.setText(savedPassword);
+            checkBox2.setChecked(true);
         }
 
         // Olhinho - show/hide senha
@@ -73,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         // Botão Continuar
+        // Dentro do botão Continuar
         btn_continuar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 String username = nomeUsuario.getText().toString();
@@ -81,20 +80,18 @@ public class LoginActivity extends AppCompatActivity {
                 if (username.isEmpty() || password.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
                 } else {
-                    if (db.checkUser(username, password)) {
+                    if (db.getUsuarioDAO().checkUser(username, password) > 0) {
                         // Login bem-sucedido
-                        String email = db.getUserEmail(username); // Suponha que o método existe no DataBaseHelper
-
+                        String email = db.getUsuarioDAO().getUserEmail(username);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("userName", username);
-                        editor.putString("userEmail", email); // Salva o email
+                        editor.putString("userEmail", email);
 
                         if (checkBox2.isChecked()) {
                             editor.putString("username", username);
                             editor.putString("password", password);
                             editor.putBoolean("save_login", true);
                         } else {
-                            // Remover dados
                             editor.remove("username");
                             editor.remove("password");
                             editor.putBoolean("save_login", false);
@@ -106,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
                         finish();
                     } else {
                         // Credenciais incorretas
-                        Toast.makeText(getApplicationContext(), "Usuário não existe", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Credenciais incorretas", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -119,12 +116,5 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        // Preencher campos se o login estiver salvo
-        if (saveLogin) {
-            nomeUsuario.setText(sharedPreferences.getString("username", ""));
-            senha.setText(sharedPreferences.getString("password", ""));
-            checkBox2.setChecked(true);
-        }
     }
 }

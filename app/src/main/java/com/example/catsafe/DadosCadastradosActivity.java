@@ -13,6 +13,7 @@ import com.example.catsafe2.R;
 public class DadosCadastradosActivity extends AppCompatActivity {
 
     Button alterarInformacoes;
+    ImageButton voltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class DadosCadastradosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dados_cadastrados);
 
         alterarInformacoes = findViewById(R.id.alterarInformacoes);
-        ImageButton voltar = findViewById(R.id.imageButton2_voltar);
+        voltar = findViewById(R.id.imageButton2_voltar);
 
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override

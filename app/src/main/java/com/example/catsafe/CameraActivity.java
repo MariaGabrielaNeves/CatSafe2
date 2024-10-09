@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,52 +23,91 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class CameraActivity extends AppCompatActivity {
+    Button buttonPegar, buttonCapturar;
+    ImageView voltar, imageView_cam;
 
-    Button button1, button2;
-    ImageView imageView;
-    ImageButton voltar;
-
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
-        imageView = findViewById(R.id.imageView);
-        button1 = findViewById(R.id.button);
+        imageView_cam = findViewById(R.id.imageView_cam);
+        buttonPegar = findViewById(R.id.button_pegar);
+        buttonCapturar = findViewById(R.id.button_capturar);
+        voltar = findViewById(R.id.imageButton2_voltar);
 
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        //exibir foto
+        buttonPegar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FotoDownload fotoDownload = new FotoDownload();
                 fotoDownload.execute();
             }
         });
+
+        //capturar foto
+        buttonCapturar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FotoCapture fotoCapture = new FotoCapture();
+                fotoCapture.execute();
+            }
+        });
+    }
+
+    class FotoCapture extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            Bitmap[] fotos = new Bitmap[1];
+            for (int i = 0; i < 1; i++) {
+                try {
+                    URL url = new URL("http://10.100.51.50/capture");
+                    HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                    conexao.setReadTimeout(5000);
+                    conexao.setConnectTimeout(5000);
+                    conexao.setRequestMethod("GET");
+                    conexao.setDoInput(true);
+                    conexao.setDoOutput(false);
+
+                    conexao.connect();
+                    if (conexao.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                        InputStream in = conexao.getInputStream();
+                    } else {
+                    }
+                } catch (Exception e) {
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void foto) {
+            super.onPostExecute(foto);
+        }
     }
 
     class FotoDownload extends AsyncTask<Integer, Void, Bitmap[]> {
         @Override
         protected void onPostExecute(Bitmap[] foto) {
             super.onPostExecute(foto);
-            imageView.setImageBitmap(foto[0]);
+            imageView_cam.setImageBitmap(foto[0]);
         }
 
         @Override
         protected Bitmap[] doInBackground(Integer[] codFuncionarios) {
+
             Bitmap[] fotos = new Bitmap[1];
             for (int i = 0; i < 1; i++) {
-                //int codFuncionario = codFuncionarios[i].intValue();
-                //Log.d("Codigo Funcionario", "" + codFuncionario);
                 try {
-                    URL url = new URL("http://10.100.51.39/saved-photo");
+                    URL url = new URL("http://10.100.51.50/saved-photo");
                     HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
                     conexao.setReadTimeout(5000);
                     conexao.setConnectTimeout(5000);
@@ -82,11 +122,9 @@ public class CameraActivity extends AppCompatActivity {
                         fotos[0] = foto;
                     } else {
                         fotos[0] = null;
-                        Log.d("EntradaDeDados", "Problema para receber os dados!");
                     }
                 } catch (Exception e) {
                     fotos[0] = null;
-                    Log.d("EntradaDeDados", "Problema para receber os dados!");
                 }
             }
             return fotos;

@@ -27,7 +27,7 @@
     <item
         android:id="@+id/nav_despejarRacao"
         android:icon="@drawable/vasilhacheia"
-        android:title="Despejar Informações"/>
+        android:title="Despejar Ração"/>
 
     <item
         android:id="@+id/nav_alterarQuantidade"

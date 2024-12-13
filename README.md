@@ -37,7 +37,7 @@ O **CatSafe** é um sistema integrado que combina um aplicativo Android com um c
 
 ## Autor  
 Desenvolvido por **Maria Gabriela Neves e Ana Carolina Mourão** 🐱❤️.  
-Se tiver dúvidas ou sugestões, entre em contato: [seuemail@exemplo.com](mailto:seuemail@exemplo.com).  
+Se tiver dúvidas ou sugestões, entre em contato: [mariagabriela18122006@gmail.com](mariagabriela18122006@gmail.com).  
 
 ## Licença  
 Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).  

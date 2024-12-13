@@ -8,64 +8,68 @@
     tools:context="com.example.catsafe.CadastroActivity"
     tools:ignore="MissingDefaultResource">
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutSenha"
         android:layout_width="309dp"
         android:layout_height="wrap_content"
-        app:boxStrokeColor="@color/roxo_claro"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
         android:hint="Senha"
         app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/roxo_claro"
         app:boxStrokeWidthFocused="1dp"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/roxo_claro"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="8dp"
-        app:endIconMode="password_toggle"
-        app:endIconTint="@color/roxo_claro">
+        app:hintTextColor="@color/black"
+        app:layout_constraintVertical_bias="0.624">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditSenha"
             android:layout_width="match_parent"
-            android:layout_height="54sp"
+            android:layout_height="50sp"
             android:inputType="textPassword"
             android:paddingVertical="10dp"
             android:paddingStart="10dp"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutConfirmaSenha"
         android:layout_width="309dp"
         android:layout_height="wrap_content"
-        app:boxStrokeColor="@color/roxo_claro"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:hint="Confirmar Senha"
         app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/roxo_claro"
         app:boxStrokeWidthFocused="1dp"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/roxo_claro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
+        app:hintTextColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.688"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        app:endIconMode="password_toggle"
-        app:endIconTint="@color/roxo_claro">
+        app:layout_constraintVertical_bias="0.733">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditTextConfirmaSenha"
-        android:layout_width="match_parent"
-        android:layout_height="54sp"
-        android:inputType="textPassword"
-        android:paddingVertical="10dp"
-        android:paddingStart="10dp"
-        android:textSize="20sp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextConfirmaSenha"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:inputType="textPassword"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-<ImageView
+    <ImageView
         android:id="@+id/imageView2"
         android:layout_width="112dp"
         android:layout_height="114dp"
@@ -81,6 +85,12 @@
         app:layout_constraintVertical_bias="0.181"
         app:srcCompat="@drawable/logo_login" />
 
+    <!--nome de Usuario-->
+
+
+    <!--email-->
+
+
     <Button
         android:id="@+id/button2_continuar"
         android:layout_width="250dp"
@@ -90,73 +100,73 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:background="@drawable/botao_continuar"
-        android:text="Continuar"
         android:fontFamily="@font/alfa_slab_one"
+        android:text="Continuar"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.818" />
+        app:layout_constraintVertical_bias="0.838" />
 
-    <!--nome de Usuario-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutNomeUsuario"
         android:layout_width="309dp"
-        android:hint="Nome de Usuário"
         android:layout_height="wrap_content"
-        app:boxStrokeColor="@color/roxo_claro"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Nome de Usuário"
         app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/roxo_claro"
+        android:textColor="@color/black"
         app:boxStrokeWidthFocused="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513"
-        android:layout_marginBottom="10dp"
-        android:paddingBottom="10dp"
-        android:layout_marginTop="8dp">
+        app:hintTextColor="@color/black"
+        app:layout_constraintVertical_bias="0.515">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditNomeUsuario"
             android:layout_width="match_parent"
-            android:layout_height="54sp"
+            android:layout_height="50sp"
             android:inputType="text"
-            android:paddingBottom="10dp"
+            android:paddingVertical="10dp"
             android:paddingStart="10dp"
+            android:paddingBottom="10dp"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
-    <!--email-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutEmail"
         android:layout_width="309dp"
         android:layout_height="wrap_content"
-        android:hint="E-mail"
-        app:boxStrokeColor="@color/roxo_claro"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeWidthFocused="1dp"
         android:layout_marginBottom="8dp"
+        android:hint="E-mail"
         android:paddingBottom="10dp"
+        app:boxBackgroundMode="outline"
+        android:textColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:boxStrokeColor="@color/roxo_claro"
+        app:boxStrokeWidthFocused="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.424">
+        app:layout_constraintVertical_bias="0.416">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextEmail"
             android:layout_width="match_parent"
-            android:layout_height="54sp"
+            android:layout_height="50sp"
             android:inputType="text"
             android:paddingVertical="10dp"
             android:paddingStart="10dp"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <TextView
         android:id="@+id/textView3"
@@ -181,17 +191,17 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="48sp"
+        android:layout_height="30sp"
         android:layout_marginTop="28dp"
-        android:text="Ja tem uma conta?"
+        android:text="Já tem uma conta?"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.899" />
+        app:layout_constraintVertical_bias="0.901" />
 
     <TextView
         android:id="@+id/textView_cadastro"
@@ -206,5 +216,5 @@
         app:layout_constraintHorizontal_bias="0.747"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.903" />
+        app:layout_constraintVertical_bias="0.929" />
 </androidx.constraintlayout.widget.ConstraintLayout>

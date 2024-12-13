@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#FFFFFF"
     tools:context="com.example.catsafe.DadosCadastradosActivity">
 
     <View
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView_esqueceusenha"
+        android:id="@+id/textView_nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nome de usuário:"
@@ -48,20 +48,20 @@
         tools:ignore="DuplicateIds" />
 
     <TextView
-        android:id="@+id/editTextText_nomeUsuario"
+        android:id="@+id/TextUsername"
         android:layout_width="309dp"
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:width="309dp"
         android:background="@drawable/custom_borda"
         android:ems="10"
-        android:text="Maria"
-        android:textSize="18dp"
+        android:gravity="center_vertical"
         android:inputType="text"
         android:paddingStart="10dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -71,7 +71,7 @@
 
 
     <TextView
-        android:id="@+id/textView_esqueceusenha"
+        android:id="@+id/textView_senha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Senha:"
@@ -86,7 +86,7 @@
         tools:ignore="DuplicateIds" />
 
     <TextView
-        android:id="@+id/textView_esqueceusenha"
+        android:id="@+id/textView_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="E-mail:"
@@ -151,8 +151,9 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/custom_borda"
         android:ems="10"
-        android:text="*************"
-        android:textSize="20sp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="@color/black"
         android:inputType="textPassword"
         android:paddingStart="10dp"
         app:layout_constraintBottom_toTopOf="@+id/alterarInformacoes"
@@ -183,15 +184,16 @@
         android:layout_height="48dp"
         android:background="@drawable/custom_borda"
         android:ems="10"
-        android:text="maria@gmail.com"
-        android:textSize="18dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="@color/black"
         android:inputType="textEmailAddress"
         android:paddingStart="10dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText_nomeUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/TextUsername"
         app:layout_constraintVertical_bias="0.443" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

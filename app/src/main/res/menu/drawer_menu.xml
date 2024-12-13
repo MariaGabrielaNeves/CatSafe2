@@ -1,46 +1,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/divider3"
-        android:title=" "
-        android:icon="@android:color/transparent" />
 
     <item
         android:id="@+id/nav_home1"
         android:icon="@drawable/home"
         android:title="Home"/>
 
-    <item
-        android:id="@+id/nav_cadastrar_pet"
-        android:icon="@drawable/pata"
-        android:title="Cadastrar Pet"/>
 
     <item
         android:id="@+id/nav_editarInformacao"
         android:icon="@drawable/configuracao"
-        android:title="Informações"/>
+        android:title="Informações cadastradas"/>
 
-    <item
-        android:id="@+id/nav_verificarQuantidade"
-        android:icon="@drawable/vasilhavazia"
-        android:title="Verificar Quantidade"/>
 
     <item
         android:id="@+id/nav_despejarRacao"
         android:icon="@drawable/vasilhacheia"
         android:title="Despejar Ração"/>
 
+
     <item
         android:id="@+id/nav_alterarQuantidade"
-        android:icon="@drawable/vasilhacheia"
-        android:title="Alterar Quantidade"/>
+        android:icon="@drawable/baseline_camera_alt_24"
+        android:title="Câmera"/>
+
 
     <item
         android:id="@+id/divider1"
-        android:title=" "
-        android:icon="@android:color/transparent" />
-
-    <item
-        android:id="@+id/divider2"
         android:title=" "
         android:icon="@android:color/transparent" />
 

@@ -45,25 +45,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.248" />
 
-    <EditText
-        android:id="@+id/textView_racaoDisponivel"
+    <Spinner
+        android:id="@+id/spinner_qtdRacao"
         android:layout_width="330dp"
         android:layout_height="60dp"
+        android:layout_marginTop="236dp"
+        android:layout_marginEnd="48dp"
         android:background="#ECF0F3"
-        android:hint="100g"
-        android:padding="10sp"
-        android:paddingStart="15sp"
-        android:paddingLeft="10sp"
-        android:paddingTop="10sp"
-        android:paddingEnd="10sp"
-        android:paddingRight="10sp"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.395"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.345" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/textView5"
@@ -88,6 +82,8 @@
         android:padding="10sp"
         android:paddingStart="15sp"
         android:paddingLeft="10sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:paddingTop="10sp"
         android:paddingEnd="10sp"
         android:paddingRight="10sp"
@@ -102,7 +98,7 @@
     <Button
         android:id="@+id/button2_continuar"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -119,16 +115,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.771" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="415dp"
-        android:layout_height="75dp"
-        android:background="@color/roxo_claro"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:itemIconSize="37dp"
-        app:menu="@menu/bottom_nav_menu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

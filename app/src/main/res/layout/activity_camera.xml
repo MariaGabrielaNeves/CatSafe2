@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#FFFFFF"
     tools:context="com.example.catsafe.CameraActivity">
 
     <ImageButton
@@ -25,30 +25,65 @@
         android:id="@+id/button_pegar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="272dp"
+        android:layout_marginBottom="112dp"
         android:background="@drawable/botao_continuar"
-        android:text="Pegar"
+        android:fontFamily="@font/alfa_slab_one"
+        android:gravity="center"
+        android:text="Exibir imagem"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.798"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_capturar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="272dp"
+        android:layout_marginBottom="256dp"
         android:background="@drawable/botao_continuar"
-        android:text="Capturar"
+        android:fontFamily="@font/alfa_slab_one"
+        android:gravity="center"
+        android:text="Tirar foto"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="360dp"
+        android:layout_height="54dp"
+        android:text="Clique no botão abaixo para capturar a imagem"
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.562">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="360dp"
+        android:layout_height="54dp"
+        android:text="Aguarde 5 segundos, clique no botão seguinte para ver a foto"
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.763">
+
+    </TextView>
 
     <ImageView
         android:id="@+id/imageView_cam"
+        android:background="@color/roxo_claro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="188dp"

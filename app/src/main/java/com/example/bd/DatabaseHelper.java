@@ -1,219 +1,237 @@
 package com.example.bd;
 
-import android.content.Context;
-
-import androidx.room.Database;
-import androidx.room.Room;
-import androidx.room.RoomDatabase;
-
-@Database(entities = {Usuario.class, Pet.class, Historico.class}, version = 1)
-public abstract class DatabaseHelper /*CatSafeDatabase*/ extends RoomDatabase {
-        private static volatile DatabaseHelper INSTANCE;
-
-        public abstract UsuarioDAO getUsuarioDAO();
-        public abstract PetDAO getPetDAO();
-        public abstract HistoricoDAO getHistoricoDAO();
-
-        public static DatabaseHelper getDatabase(final Context context) {
-            if (INSTANCE == null) {
-                synchronized (DatabaseHelper.class) {
-                    if (INSTANCE == null) {
-                        INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                                        DatabaseHelper.class, "nome_do_banco_de_dados")
-                                .build();
-                    }
-                }
-            }
-            return INSTANCE;
-        }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*package com.example.bd;
-
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-
     // Construtor
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-
     public void onConfigure(SQLiteDatabase db) {
         super.onConfigure(db);
         db.setForeignKeyConstraintsEnabled(true); // Ativa o suporte a Foreign Keys
     }
 
     // Nome do banco de dados e versão
-    private static final String DATABASE_NAME = "CatSafe.db";
-    private static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "CatSafe.db";
+    public static final int DATABASE_VERSION = 2;
 
-    // Tabelas
-    private static final String TABELA_USUARIO = "usuarios";
-    private static final String TABELA_PET = "pets";
-    private static final String TABELA_HISTORICO = "historico_alimentacao";
-
+    // Tabela usuario
+    public static final String TABELA_USUARIO = "Usuarios";
     // Colunas para a tabela de usuários
-    private static final String COLUNA_ID_USUARIO = "user_id";
-    private static final String COLUNA_NOME_USUARIO = "name";
-    private static final String COLUNA_EMAIL_USUARIO = "email";
-    private static final String COLUNA_SENHA_USUARIO = "senha";
+    public static final String COLUNA_ID_USUARIO = "id_usuario";
+    public static final String COLUNA_NOME_USUARIO = "nome";
+    public static final String COLUNA_EMAIL_USUARIO = "email";
+    public static final String COLUNA_SENHA_USUARIO = "senha";
 
-    // Colunas para a tabela de pets
-    private static final String COLUNA_PET_ID = "pet_id";
-    private static final String COLUNA_PET_NOME = "pet_name";
-    private static final String COLUNA_PET_IDADE = "idade";
-    private static final String COLUNA_USUARIO_DONO_ID = "owner_id"; // Relacionamento com a tabela users
-
+    //Tabela HistoricoAlimentação
+    public static final String TABELA_HISTORICO = "Historico_alimentacao";
     // Colunas para a tabela de histórico de alimentação
-    private static final String COLUNA_HISTORICO_ID = "history_id";
-    private static final String COLUNA_FEED_HORARIO = "feed_horario";
-    private static final String COLUNA_FEED_QUANTIDADE = "feed_quantidade";
-    private static final String COLUNA_PET_FED_ID = "pet_id"; // Relacionamento com a tabela pets
+    public static final String COLUNA_HISTORICO_ID = "id_historico";
+    public static final String COLUNA_HORARIO_ALIMENTACAO = "horario_da_alimentacao";
+    public static final String COLUNA_QUANTIDADE_ALIMENTACAO = "quantidade_alimentacao";
+    public static final String COLUNA_FED_ID = "alimentacao_id";
+    public static final String COLUNA_PORCAO = "porcao";
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Criação das tabelas
-        String createTabela_Usuario = "CREATE TABLE IF NOT EXISTS " + TABELA_USUARIO + " (" +
-                COLUNA_ID_USUARIO + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUNA_NOME_USUARIO + " TEXT, " +
-                COLUNA_EMAIL_USUARIO + " TEXT, " +
-                COLUNA_SENHA_USUARIO + " TEXT)";
+        String criarTabela_Usuarios = "CREATE TABLE IF NOT EXISTS " + TABELA_USUARIO +
+                " (" + COLUNA_ID_USUARIO + " INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
+                COLUNA_NOME_USUARIO + " TEXT NOT NULL UNIQUE, " +
+                COLUNA_EMAIL_USUARIO + " TEXT NOT NULL, " +
+                COLUNA_SENHA_USUARIO + " TEXT NOT NULL)";
+        db.execSQL(criarTabela_Usuarios);
 
-        String createTable_Pet = "CREATE TABLE IF NOT EXISTS " + TABELA_PET + " (" +
-                COLUNA_PET_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUNA_PET_NOME + " TEXT, " +
-                COLUNA_PET_IDADE + " INTEGER, " +
-                COLUNA_USUARIO_DONO_ID + " INTEGER, " +
-                "FOREIGN KEY(" + COLUNA_USUARIO_DONO_ID + ") REFERENCES " + TABELA_USUARIO + "(" + COLUNA_ID_USUARIO + "))";
-
-        String createTable_Historico_Alimentacao = "CREATE TABLE IF NOT EXISTS " + TABELA_HISTORICO + " (" +
+        String criarTabela_HistoricoAlimentacao = "CREATE TABLE IF NOT EXISTS " + TABELA_HISTORICO + " (" +
                 COLUNA_HISTORICO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUNA_FEED_HORARIO + " TEXT, " +
-                COLUNA_FEED_QUANTIDADE + " REAL, " +
-                COLUNA_PET_FED_ID + " INTEGER, " +
-                "FOREIGN KEY(" + COLUNA_PET_FED_ID + ") REFERENCES " + TABELA_PET + "(" + COLUNA_PET_ID + "))";
-
-        // Executando as queries de criação
-        db.execSQL(createTabela_Usuario);
-        db.execSQL(createTable_Pet);
-        db.execSQL(createTable_Historico_Alimentacao);
+                COLUNA_HORARIO_ALIMENTACAO + " TIME, " +
+                COLUNA_PORCAO + " TEXT, " +
+                COLUNA_QUANTIDADE_ALIMENTACAO + " REAL, " +
+                COLUNA_FED_ID + " INTEGER)";
+        db.execSQL(criarTabela_HistoricoAlimentacao);
     }
-
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Caso a estrutura do banco de dados seja atualizada no futuro
+    public void onUpgrade(SQLiteDatabase db, int versaoAntiga, int versaoNova) {
+        //atualizar
         db.execSQL("DROP TABLE IF EXISTS " + TABELA_USUARIO);
-        db.execSQL("DROP TABLE IF EXISTS " + TABELA_PET);
         db.execSQL("DROP TABLE IF EXISTS " + TABELA_HISTORICO);
         onCreate(db);
     }
 
-    // Método para adicionar um novo usuário
-    public boolean addUser(String name, String email, String password) {
+    //adicionar um novo usuário
+    public boolean adicionarUsuario(String nome, String email, String senha) {
+        if (usuarioExiste(nome)) {
+            return false;
+        }
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUNA_NOME_USUARIO, nome);
+        cv.put(COLUNA_EMAIL_USUARIO, email);
+        cv.put(COLUNA_SENHA_USUARIO, senha);
 
-        values.put(COLUNA_NOME_USUARIO, name);
-        values.put(COLUNA_EMAIL_USUARIO, email);
-        values.put(COLUNA_SENHA_USUARIO, password);
+        long resultado = -1;
 
-        long result = db.insert(TABELA_USUARIO, null, values);
-        db.close();
-        return result != -1;
+        try {
+            resultado = db.insert(TABELA_USUARIO, null, cv);
+        } catch (SQLiteConstraintException e) {
+            e.printStackTrace();
+        } finally {
+            db.close();
+        }
+
+        return resultado != -1;
     }
 
-    // Método para adicionar um novo pet
-    public boolean addPet(String petName, int age, int ownerId) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-
-        values.put(COLUNA_PET_NOME, petName);
-        values.put(COLUNA_PET_IDADE, age);
-        values.put(COLUNA_USUARIO_DONO_ID, ownerId);
-
-        long result = db.insert(TABELA_PET, null, values);
-        db.close();
-        return result != -1;
-    }
-
-    // Método para buscar o histórico de alimentação de um pet
-    public Cursor getFeedHistory(int petId) {
+    public boolean usuarioExiste(String nome) {
         SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + TABELA_HISTORICO + " WHERE " + COLUNA_PET_FED_ID + " = ?";
-        return db.rawQuery(query, new String[]{String.valueOf(petId)});
-    }
-
-    // Método para buscar um usuário por email
-    public Cursor getUser(String email) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT " + COLUNA_NOME_USUARIO + ", " + COLUNA_EMAIL_USUARIO + " FROM " + TABELA_USUARIO + " WHERE " + COLUNA_EMAIL_USUARIO + " = ?";
-        return db.rawQuery(query, new String[]{email});
-    }
-
-    public boolean checkUser(String nome, String senha) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + TABELA_USUARIO + " WHERE " + COLUNA_NOME_USUARIO + " = ? AND " + COLUNA_SENHA_USUARIO + " = ?";
-        Cursor cursor = db.rawQuery(query, new String[]{nome, senha});
-
-        boolean existe = cursor.getCount() > 0;
+        String query = "SELECT COUNT(*) FROM " + TABELA_USUARIO + " WHERE " + COLUNA_NOME_USUARIO + " = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{nome});
+        boolean existe = (cursor.getCount() > 0);
         cursor.close();
-        db.close();
         return existe;
     }
 
-    public String getUserEmail(String username) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT "+ COLUNA_EMAIL_USUARIO + " FROM " + TABELA_USUARIO + " WHERE " + COLUNA_NOME_USUARIO + " = ?", new String[]{username});
+    // Método na DatabaseHelper para salvar ou atualizar o horário
+    public void salvarOuAtualizarHorario(String horarioDaAlimentacao, String porcao ) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Verifica se o registro com o ID já existe
+        Cursor cursor = db.rawQuery("SELECT 1 FROM " + TABELA_HISTORICO + " WHERE " + COLUNA_HORARIO_ALIMENTACAO + " = ?", new String[]{horarioDaAlimentacao});
+
+        ContentValues values = new ContentValues();
+        values.put(COLUNA_HORARIO_ALIMENTACAO, horarioDaAlimentacao);
+        values.put(COLUNA_PORCAO, porcao);
+
         if (cursor.moveToFirst()) {
-            String email = cursor.getString(0);
-            cursor.close();
-            return email;
+            // Registro existe: atualiza o horário
+            db.update(TABELA_HISTORICO, values, COLUNA_HORARIO_ALIMENTACAO + " = ?",
+                    new String[]{horarioDaAlimentacao});
+        } else {
+            // Registro não existe: insere um novo horário
+            db.insert(TABELA_HISTORICO, null, values);
         }
+
         cursor.close();
         db.close();
-        return null;
     }
 
-    public boolean isInserted(String name, String email, String password) {
+    public boolean checarUsuario(String nome, String senha) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        try {
+            String SQL = "SELECT COUNT(*) FROM " + TABELA_USUARIO + " WHERE " + COLUNA_NOME_USUARIO + " = ? AND " + COLUNA_SENHA_USUARIO + " = ?";
+            cursor = db.rawQuery(SQL, new String[]{nome, senha});
+            return cursor.getCount() > 0;
+        } catch (Exception e) {
+            Log.e("DatabaseError", "Erro ao checar usuário", e);
+            return false; // Retorna false em caso de erro
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            db.close();
+        }
+    }
+
+    public String getUsuario(String nomeUsuario) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        try {
+            cursor = db.rawQuery("SELECT " + COLUNA_NOME_USUARIO + " FROM " + TABELA_USUARIO + " WHERE " + COLUNA_NOME_USUARIO + " = ?", new String[]{nomeUsuario});
+            if (cursor.moveToFirst()) {
+                return cursor.getString(0);
+            }
+            return null; // Retorna null se não encontrar o usuário
+        } catch (Exception e) {
+            Log.e("DatabaseError", "Erro ao obter email do usuário", e);
+            return null; // Retorna null em caso de erro
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            db.close();
+        }
+    }
+
+    public Cursor getUserById(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABELA_USUARIO + " WHERE " + COLUNA_ID_USUARIO + " = ?";
+        return db.rawQuery(query, new String[]{String.valueOf(userId)});
+    }
+
+
+    // Método para verificar se o nome de usuário já existe
+    public boolean usernameExists(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABELA_USUARIO, null, COLUNA_NOME_USUARIO + " = ?",
+                new String[]{username}, null, null, null);
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        return exists;
+    }
+
+    // Método para adicionar horário
+    public void addHorario(String horario) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-
-        values.put(COLUNA_NOME_USUARIO, name);
-        values.put(COLUNA_EMAIL_USUARIO, email);
-        values.put(COLUNA_SENHA_USUARIO, password);
-
-        // Tenta inserir o novo usuário na tabela
-        long result = db.insert(TABELA_USUARIO, null, values);
+        values.put(COLUNA_HORARIO_ALIMENTACAO, horario);
+        db.insert(TABELA_HISTORICO, null, values);
         db.close();
-
-        // Verifica se o resultado é -1, que indica falha na inserção
-        return result != -1;
     }
-}*/
+
+    // Método para recuperar todos os horários
+    public Cursor getAllHorarios() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM " + TABELA_HISTORICO, null);
+    }
+
+    public boolean atualizarUsuario(int id, String username, String email, @Nullable String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUNA_NOME_USUARIO, username);
+        values.put(COLUNA_EMAIL_USUARIO, email);
+        if (password != null) {
+            values.put(COLUNA_SENHA_USUARIO, password);
+        }
+        int rowsAffected = db.update(TABELA_USUARIO, values, COLUNA_ID_USUARIO + " = ?", new String[]{String.valueOf(id)});
+        db.close();
+        return rowsAffected > 0;
+    }
+
+    public boolean checkUserPassword(int userId, String currentPassword) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // Query para buscar o usuário pelo ID e pegar a senha armazenada
+        Cursor cursor = db.query(TABELA_USUARIO, new String[]{COLUNA_SENHA_USUARIO},
+                COLUNA_ID_USUARIO + " = ?", new String[]{String.valueOf(userId)},
+                null, null, null);
+
+        // Se o cursor encontrar o usuário
+        if (cursor != null && cursor.moveToFirst()) {
+            // Obtém a senha armazenada no banco
+            @SuppressLint("Range") String storedPassword = cursor.getString(cursor.getColumnIndex(COLUNA_SENHA_USUARIO));
+
+            // Fecha o cursor para liberar os recursos
+            cursor.close();
+
+            // Compara a senha fornecida com a senha armazenada
+            return storedPassword.equals(currentPassword);  // Retorna true se as senhas coincidirem
+        }
+
+        // Caso não encontre o usuário ou algum outro erro, retorna false
+        return false;
+    }
+
+
+}

@@ -1,13 +1,18 @@
 package com.example.catsafe;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 
 import com.example.ListView.HistoricoAdpt;
 import com.example.ListView.MyAdapter;
+import com.example.bd.DatabaseHelper;
 import com.example.catsafe2.R;
 import android.view.View;
 import android.widget.ListView;
@@ -17,22 +22,23 @@ import java.util.List;
 
 public class HistoricoActivity extends AppCompatActivity {
 
-    MyAdapter myAdapter;
-    ArrayList<HistoricoAdpt> historicoAdpts = new ArrayList<>();
-    HistoricoAdpt historicoAdpt2;
+    private ArrayList<String> historicoHorarios;
+    private ArrayAdapter<String> adapter;
     Context context;
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historico);
 
-        historicoAdpts.addAll(inicializarHistorico());
-        context = this;
+        android.widget.ListView listViewHistorico = findViewById(R.id.listViewHistorico); // Corrigido
+        db = new DatabaseHelper(this);
+        historicoHorarios = new ArrayList<>();
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, historicoHorarios);
+        listViewHistorico.setAdapter(adapter);
 
-        myAdapter = new MyAdapter(historicoAdpts, this);
-        ListView listView = findViewById(R.id.listview);
-        listView.setAdapter(myAdapter);
+        carregarHorariosDoBanco();
 
         ImageButton voltar = findViewById(R.id.imageButton2_voltar);
 
@@ -45,16 +51,16 @@ public class HistoricoActivity extends AppCompatActivity {
         });
     }
 
-    private List<HistoricoAdpt> inicializarHistorico() {
-            List<HistoricoAdpt> listaDeProdutos = new ArrayList<>();
-
-            listaDeProdutos.add(new HistoricoAdpt("Hoje", 3));
-            listaDeProdutos.add(new HistoricoAdpt("Ontem", 2));
-            listaDeProdutos.add(new HistoricoAdpt("14/08", 5));
-            listaDeProdutos.add(new HistoricoAdpt("13/08", 1));
-            listaDeProdutos.add(new HistoricoAdpt("12/08", 4));
-
-            return listaDeProdutos;
+    private void carregarHorariosDoBanco() {
+        Cursor cursor = db.getAllHorarios();
+        if (cursor.moveToFirst()) {
+            do {
+                @SuppressLint("Range") String horario = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUNA_HORARIO_ALIMENTACAO));
+                historicoHorarios.add("Clique em: " + horario);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        adapter.notifyDataSetChanged();
     }
 
 }

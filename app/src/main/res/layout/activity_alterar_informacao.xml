@@ -17,6 +17,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView_esqueceusenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alterando dados"
+        android:textColor="@color/azul_escuro"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.138"
+        tools:ignore="DuplicateIds" />
+
     <EditText
         android:id="@+id/editTextText_novaSenha"
         android:layout_width="309dp"
@@ -29,6 +44,7 @@
         android:background="@drawable/custom_borda"
         android:ems="10"
         android:inputType="text"
+        android:textColor="@color/black"
         android:paddingStart="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,6 +60,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
         app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -56,6 +73,7 @@
         android:layout_height="wrap_content"
         android:text="E-mail:"
         android:textSize="16sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.14"
@@ -72,6 +90,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:textColor="@color/black"
         android:width="309dp"
         android:background="@drawable/custom_borda"
         android:ems="10"
@@ -93,6 +112,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:width="309dp"
+        android:textColor="@color/black"
         android:background="@drawable/custom_borda"
         android:ems="10"
         android:inputType="text"
@@ -108,6 +128,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Senha atual:"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +139,7 @@
         tools:ignore="DuplicateIds" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editTextText_nome"
         android:layout_width="309dp"
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
@@ -126,6 +147,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:width="309dp"
+        android:textColor="@color/black"
         android:background="@drawable/custom_borda"
         android:ems="10"
         android:inputType="text"
@@ -142,6 +164,7 @@
         android:layout_height="wrap_content"
         android:text="Nome de usuário:"
         android:textSize="16sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.178"
@@ -182,8 +205,9 @@
         android:id="@+id/imageView5"
         android:layout_width="138dp"
         android:layout_height="128dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView_esqueceusenha"
+        android:layout_marginTop="128dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/foto_de_perfil" />

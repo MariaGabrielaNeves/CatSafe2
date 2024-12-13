@@ -2,12 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />-->
+    <!--<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.INTERNET" />-->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+        android:enableOnBackInvokedCallback="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -37,9 +40,7 @@
         <activity
             android:name="com.example.catsafe.HistoricoActivity"
             android:exported="false" />
-        <activity
-            android:name="com.example.catsafe.CadastrarPetActivity"
-            android:exported="false" />
+
         <activity
             android:name="com.example.catsafe.LoginActivity"
             android:exported="true" />
@@ -48,6 +49,7 @@
             android:exported="true" />
         <activity
             android:name="com.example.catsafe.FormaDeDespejoActivity" />
+
         <activity
             android:name="com.example.catsafe.CadastroActivity"
             android:exported="true" />

@@ -10,4 +10,12 @@
         <item>Macho</item>
         <item>Fêmea</item>
     </string-array>
+
+    <string-array name="porcoes">
+        <item>1 porção - 100g</item>
+        <item>2 porção - 200g</item>
+        <item>3 porção - 300g</item>
+        <item>4 porção - 400g</item>
+        <item>5 porção - 500g</item>
+    </string-array>
 </resources>

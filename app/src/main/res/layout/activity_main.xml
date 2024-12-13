@@ -35,62 +35,33 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.027" />
 
-                <TextView
-                    android:id="@+id/textView_notificacao1"
-                    android:layout_width="394dp"
-                    android:layout_height="72dp"
-                    android:background="#ECF0F3"
-                    android:padding="10sp"
-                    android:paddingStart="15sp"
-                    android:paddingLeft="10sp"
-                    android:paddingTop="10sp"
-                    android:paddingEnd="10sp"
-                    android:paddingRight="10sp"
-                    android:textSize="22sp"
+                <FrameLayout
+                    android:id="@+id/frameLayout2"
+                    android:layout_width="414dp"
+                    android:layout_height="330dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.39"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.592" />
+                    app:layout_constraintStart_toStartOf="parent">
 
-                <TextView
-                    android:id="@+id/textView_notificacao2"
-                    android:layout_width="394dp"
-                    android:layout_height="72dp"
-                    android:background="#ECF0F3"
-                    android:padding="10sp"
-                    android:paddingStart="15sp"
-                    android:paddingLeft="10sp"
-                    android:paddingTop="10sp"
-                    android:paddingEnd="10sp"
-                    android:paddingRight="10sp"
-                    android:textSize="22sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.39"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.732" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/textView_notificacao3"
-                    android:layout_width="394dp"
-                    android:layout_height="72dp"
-                    android:background="#ECF0F3"
-                    android:padding="10sp"
-                    android:paddingStart="15sp"
-                    android:paddingLeft="10sp"
-                    android:paddingTop="10sp"
-                    android:paddingEnd="10sp"
-                    android:paddingRight="10sp"
-                    android:textSize="22sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.39"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.87" />
+                                <ListView
+                                    android:id="@+id/listViewHistorico"
+                                    android:layout_width="419dp"
+                                    android:layout_height="330dp"
+                                    android:divider="@android:color/transparent"
+                                    android:dividerHeight="5.0dp"
+                                    android:padding="15dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.4"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="1.0" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                </FrameLayout>
+
 
 
                 <TextView
@@ -113,7 +84,7 @@
                     app:layout_constraintVertical_bias="0.282" />
 
                 <TextView
-                    android:id="@+id/textView4_horarioPainel"
+                    android:id="@+id/statusTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="desconectado"
@@ -132,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:text="Histórico:"
                     android:textColor="@color/azul_escuro"
-                    android:textSize="24sp"
+                    android:textSize="24dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.123"
@@ -140,89 +111,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.47" />
 
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="70dp"
-                    android:layout_height="63dp"
-                    android:src="@drawable/gato_peixe"
-                    android:scaleType="fitCenter"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.046"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.723"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-                <ImageButton
-                    android:id="@+id/imageButton1"
-                    android:layout_width="70dp"
-                    android:layout_height="63dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/gato_comendo"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.046"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.597"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-                <ImageButton
-                    android:id="@+id/imageButton3"
-                    android:layout_width="70dp"
-                    android:layout_height="63dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/gato_fome"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.046"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.872"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-                <TextView
-                    android:id="@+id/textView_textoNotificacao1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tom comeu à 5 horas."
-                    android:textColor="@color/azul_escuro"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView_notificacao1"
-                    app:layout_constraintEnd_toEndOf="@+id/textView_notificacao1"
-                    app:layout_constraintHorizontal_bias="0.451"
-                    app:layout_constraintStart_toStartOf="@+id/textView_notificacao1"
-                    app:layout_constraintTop_toTopOf="@+id/textView_notificacao1"
-                    app:layout_constraintVertical_bias="0.48" />
-
-                <TextView
-                    android:id="@+id/textView_textoNotificacao2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tom finalizou a porção de ração."
-                    android:textColor="@color/azul_escuro"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView_notificacao2"
-                    app:layout_constraintEnd_toEndOf="@+id/textView_notificacao2"
-                    app:layout_constraintHorizontal_bias="0.865"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView_notificacao2"
-                    app:layout_constraintVertical_bias="0.48" />
-
-                <TextView
-                    android:id="@+id/textView_textoNotificacao3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Esse miauu pode ser fome, ein..."
-                    android:textColor="@color/azul_escuro"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView_notificacao3"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.79"
-                    app:layout_constraintStart_toStartOf="@+id/textView_notificacao3"
-                    app:layout_constraintTop_toTopOf="@+id/textView_notificacao3"
-                    app:layout_constraintVertical_bias="0.44" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -230,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:text="Status do comedouro:"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="24dp"
                     app:layout_constraintBottom_toTopOf="@+id/textView_painelHoras"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.173"
@@ -238,21 +126,9 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.937" />
 
-                <com.google.android.material.bottomnavigation.BottomNavigationView
-                     android:id="@+id/bottom_navigation"
-                     android:layout_width="415dp"
-                     android:layout_height="75dp"
-                     android:background="@color/roxo_claro"
-                     app:itemIconTint="@color/white"
-                     app:itemTextColor="@color/white"
-                     app:itemIconSize="37dp"
-                     app:menu="@menu/bottom_nav_menu"
-                     app:layout_constraintBottom_toBottomOf="parent"
-                     app:layout_constraintEnd_toEndOf="parent"
-                     app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.navigation.NavigationView
+      <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav_view"
             android:layout_width="300dp"
             android:layout_height="match_parent"
